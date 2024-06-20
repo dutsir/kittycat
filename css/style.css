@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 95%; /* Задаем ширину в процентах */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 5%; /* Задаем верхний отступ в процентах */
+   
+}
+
+
+h1  {
+    color: #333;
+    background-color: #000;
+    background-image: linear-gradient(45deg, #00f, #f0f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255,255,255,0.9) 0px 1vw 1vw; /* Изменим на относительные значения */
+    animation: glow 2s infinite alternate;
+    
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+    100% {
+        text-shadow: 0 0 50px #fff, 0 0 70px #00f, 0 0 90px #00f;
+    }
+}
+
+
+
+p {
+    color: #a51b9f;
+    background-color: #000;
+    background-image: linear-gradient(45deg, #00f, #f0f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255,255,255,0.9) 0px 0.5vw 0.5vw; /* Изменим на относительные значения */
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #00f, 0 0 40px #00f;
+    }
+}
+
+
+input[type="text"] {
+    padding: 2vw; /* Изменяем на относительные значения */
+    font-size: 2vw; /* Изменяем на относительные значения */
+    text-align: center;
+    margin-top: 5%;
+}
+
+button {
+    padding: 2vw 4vw; /* Изменяем на относительные значения */
+    background-color: #4c53af;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 5%; /* Изменяем на верхний отступ в процентах */
+    font-size: 1.5vw; /* Изменяем на относительные значения */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+button:after {
+    content: "";
+    position: absolute;
+    background: #8000FF;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s;
+    animation: glow_2 2s infinite alternate;
+}
+
+@keyframes glow_2 {
+    0% {
+        box-shadow: 0 0 1vw #8000FF, 0 0 2vw #8000FF; /* Изменяем на относительные значения */
+    }
+    100% {
+        box-shadow: 0 0 5vw #8000FF, 0 0 7vw #FF00FF, 0 0 9vw #FF00FF; /* Изменяем на относительные значения */
+    }
+}
+
+button:hover:after {
+    transform: translate(-50%, -50%) scale(1.3); /* Изменяем масштабирование при наведении */
+}
+
+#result {
+    font-size: 2vw; /* Изменяем на относительные значения */
+    margin-top: 5%; /* Изменяем на верхний отступ в процентах */
+}
+/*catCATCAATCAT*/
+.container_cat {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.cat {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('/img/cat.png') no-repeat;
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.line {
+    position: absolute;
+    stroke: black;
+    stroke-width: 2px;
+}
